@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    container_name: "web"
+    build:
+      dockerfile: ./container/web/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+  php:
+    container_name: "php"
+    build:
+      dockerfile: ./container/php/Dockerfile
+    volumes:
+      - ./src:/var/www/html
+
